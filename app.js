@@ -1,3 +1,3 @@
-let moduloAutos = require('./autos.js');
+let moduloAutos = require('./autos');
 
 console.log(moduloAutos.porColor('black'));

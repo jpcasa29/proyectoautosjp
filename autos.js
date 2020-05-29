@@ -215,7 +215,10 @@ let autos = {
             return arrayFiltrado;
         },
         porMarca: function(marca) {
-​
+​            let arrayfiltrado = this.lista.filter(function(elemento){
+                return elemento.marca == marca;
+            });
+            return arrayfiltrado
         },
         porAnio: function() {
 ​
