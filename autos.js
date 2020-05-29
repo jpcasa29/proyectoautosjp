@@ -207,23 +207,28 @@ let autos = {
         ],
         porColor: function(color) {
             let arrayFiltrado = [];
-            for (let i=0;i<this.lista.length;i++){
-                if(this.lista[i].color == color){
+            for (let i = 0; i < this.lista.length; i++) {
+                if(this.lista[i].color.toLowerCase() == color.toLowerCase()){
                     arrayFiltrado.push(this.lista[i]);
                 }
             }
             return arrayFiltrado;
         },
         porMarca: function(marca) {
-​            let arrayfiltrado = this.lista.filter(function(elemento){
-                return elemento.marca == marca;
+            let arrayFiltrado = this.lista.filter(function(elemento) {
+            return elemento.marca.toLowerCase() == marca.toLowerCase();
             });
-            return arrayfiltrado
+            let resultado = (arrayFiltrado.length == 0) ? "No hay autos de esa Marca" : arrayFiltrado;
+            return resultado
         },
-        porAnio: function() {
-​
+        porAnio: function(anio) {
+            let arrayFiltrado = [];
+            this.lista.forEach(function(elemento){
+                if(elemento.anio == anio){
+                    arrayFiltrado.push(elemento);
+                };
+            });
+            return arrayFiltrado;
         }
 }
-​
-​
-module.exports = autos;
+module.exports = autos
